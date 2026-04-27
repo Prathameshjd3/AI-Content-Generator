@@ -38,6 +38,7 @@
 
                 <div class="mb-3">
                     <select name="content_type" id="content_type" class="form-control">
+                        <option value="" disabled selected>Select Content Type</option>
                         <option value="Policy Draft">Policy Draft</option>
                         <option value="Risk Management">Risk Management</option>
                         <option value="Internal Audit Observation">Internal Audit Observation</option>

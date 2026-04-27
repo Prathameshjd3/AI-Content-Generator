@@ -2,6 +2,13 @@
 
 $id = $_GET['id'];
 $data = $db->query("SELECT * FROM ai_content_records WHERE id=$id")->fetch_assoc();
+
+if(!$data) {
+    echo "<script>alert('Content not found!'); 
+                window.location.href='history.php';
+        </script>";
+    exit;
+}
 ?>
 
 <!DOCTYPE html>

@@ -18,7 +18,6 @@ $stmt = $db->prepare("INSERT INTO ai_content_records
 (prompt, content_type, generated_content, created_at) 
 VALUES (?, ?, ?, NOW())");
 
-// 3 values → 3 types
 $stmt->bind_param("sss", $prompt, $content_type, $content);
 
 if($stmt->execute()) {
