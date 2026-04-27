@@ -3,6 +3,8 @@
 if(isset($_POST['prompt']) && !empty($_POST['prompt'])){
 
     $prompt = $_POST['prompt'];
+
+    //create api key in Google Ai Studio (Gemini) and put it here inside $apiKey variable
     $apiKey = "";
 
     // Google Ai Studio (Gemini)
