@@ -11,6 +11,17 @@
 </head>
 
 <body class="bg-light">
+<?php
+if(isset($_GET['msg']) && $_GET['msg']=="deleted"){
+    echo "<div class='alert alert-success'>Record deleted successfully</div>";
+    echo "<script>
+            setTimeout(function(){
+                document.querySelector('.alert').remove();
+                 window.location.href='history.php'
+            }, 3000);
+           ;
+          </script>";
+}?>
 
 <div class="container py-5">
 

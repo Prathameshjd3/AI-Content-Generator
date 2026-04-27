@@ -3,6 +3,9 @@ include "../config/db.php";
 
 $prompt = $_POST['prompt'] ?? '';
 $content_type = $_POST['content_type'] ?? 'General';
+if(empty($content_type)){
+    $content_type = 'General';
+}
 $content = $_POST['content'] ?? '';
 
 // echo "Received prompt: " . $prompt . "<br>";

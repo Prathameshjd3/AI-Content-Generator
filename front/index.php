@@ -111,6 +111,14 @@
             data: { prompt: prompt, content_type: content_type },
             success: function(response) {
                 console.log("res=> ",response);
+                if(response.includes("API Error") || response.includes("Unexpected Response")){
+                    alert("Error generating content. Please try again.");    
+                    // alert("Error details: " + response);
+                    $("#loader").hide();
+                    // $("#output-section").hide();
+                    return;
+                }
+
                 $("#loader").hide();
                 $("#output-section").show();
                 
@@ -165,6 +173,10 @@
         console.log("PROMT to save:",prompt);
         let content = CKEDITOR.instances['ckeditor'].getData();
         console.log("Content to save: ", content);
+         if(content.includes("API Error") || content.includes("Unexpected Response")){
+            alert("Could not save content. Error generating content! Please try again.");
+            return;
+        }
         $.ajax({
             url: "../src/save_content.php",
             method: "POST",

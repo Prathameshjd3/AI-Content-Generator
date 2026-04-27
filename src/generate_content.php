@@ -3,14 +3,15 @@
 if(isset($_POST['prompt']) && !empty($_POST['prompt'])){
 
     $prompt = $_POST['prompt'];
+    $apiKey = "";
 
     $apiKey = "AIzaSyCBZmena_Y4AbeTVyEL-pkerDQOa9OGEpo";
-    // $apiKey = "AIzaSyDoY1jkdcFK19H-oCa3kdGdGeLmoGo3IuQ";   //working api
+    // $apiKey = "AIzaSyDoY1jkdcFK19H-oCa3kdGdGeLmoGo3IuQ";
+    // $apiKey = "AIzaSyANoVpX0o-Wj6aGDmgmLesZ7-3lC_B1Lmo";   //working api
 
     // Google Ai Studio (Gemini)
     $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=".$apiKey;
     
-
     $data = [
         "contents" => [
             [
